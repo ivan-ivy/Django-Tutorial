@@ -73,5 +73,12 @@ Steps:
     We’re using two generic views here: ListView and DetailView. Respectively, those two views abstract the concepts of “display a list of objects” and “display a detail page for a particular type of object.”
 
     Generic views use default template file name, to change it, set template_name to your file.
-   
+
+11. Automated Testing
+    Add test subclass of TestCase with method whose name starts with test in `test.py`, run test using `python manage.py test polls`.
+    
+    To test a view, use Django test Clent to simulate a user interacting with the code at the view level.
+    TestCase provide assertion methods like:assertIs(), assertContains(), and assertQuerysetEqual().
+    
+    Good rules for test: a separate TestClass for each model or view. a separate test method for each set of conditions you want to test. test method names that describe their function
 
