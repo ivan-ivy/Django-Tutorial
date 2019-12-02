@@ -43,5 +43,11 @@ Steps:
 6. Shell
    `python manage.py shell` manage.py sets the DJANGO_SETTINGS_MODULE environment variable, which gives Django the Python import path to your mysite/settings.py file.
 
+    It’s important to add __str__() methods to your models, not only for your own convenience when dealing with the interactive prompt, but also because objects’ representations are used throughout Django’s automatically-generated admin.
+
+    Django provide shortcut for primary-key exact lookups.The following is identical to Question.objects.get(id=1).`Question.objects.get(pk=1)`
+
+7. Create Admin
+    Use `python manage.py createsuperuser` to create users. To make the admin can manage polls, register polls in `polls/admin.py`
    
 
