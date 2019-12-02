@@ -82,3 +82,5 @@ Steps:
     
     Good rules for test: a separate TestClass for each model or view. a separate test method for each set of conditions you want to test. test method names that describe their function
 
+12. Static file
+    django.contrib.staticfiles collects static files from each of your applications (and any other places you specify) into a single location that can easily be served in production.
