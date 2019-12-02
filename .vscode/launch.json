@@ -9,7 +9,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}\\mysite\\manage.py",
+            "program": "${workspaceFolder}/mysite/manage.py",
             "args": [
                 "runserver",
                 "--noreload"
