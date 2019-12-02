@@ -84,3 +84,11 @@ Steps:
 
 12. Static file
     django.contrib.staticfiles collects static files from each of your applications (and any other places you specify) into a single location that can easily be served in production.
+
+13. Customize the admin view
+    By default, Django displays the str() of each object. But sometimes it’d be more helpful if we could display individual fields. To do that, use the list_display admin option, which is a tuple of field names to display, as columns, on the change list page for the object.
+
+    list_filter
+    search_fields
+
+    To use template, override the default admin templates by copying it from the default directory into your custom directory, and make changes.
