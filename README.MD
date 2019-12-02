@@ -64,5 +64,14 @@ Steps:
     Use `get_object_or_404()`， The get_object_or_404() function takes a Django model as its first argument and an arbitrary number of keyword arguments, which it passes to the get() function of the model’s manager. It raises Http404 if the object doesn’t exist There’s also a get_list_or_404() function, which works just as get_object_or_404() – except using filter() instead of get(). It raises Http404 if the list is empty.
 
     In `polls/urls.py`, change hard code url to `{% url 'polls:detail' question.id %}` can make it easy when change the urls. And remember to add `app_name='polls'` in `polls/urls.py`.
+
+9. Form
+     Using method="post" (as opposed to method="get") is very important, because the act of submitting this form will alter data server-side. Whenever you create a form that alters data server-side, use method="post". This tip isn’t specific to Django; it’s good Web development practice in general.
+
+10. Generic View
+    These views represent a common case of basic Web development: getting data from the database according to a parameter passed in the URL, loading a template and returning the rendered template. Because this is so common, Django provides a shortcut, called the “generic views” system.
+    We’re using two generic views here: ListView and DetailView. Respectively, those two views abstract the concepts of “display a list of objects” and “display a detail page for a particular type of object.”
+
+    Generic views use default template file name, to change it, set template_name to your file.
    
 
