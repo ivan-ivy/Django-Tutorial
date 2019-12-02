@@ -49,5 +49,20 @@ Steps:
 
 7. Create Admin
     Use `python manage.py createsuperuser` to create users. To make the admin can manage polls, register polls in `polls/admin.py`
+
+8. More views
+    A view is a “type” of Web page in your Django application that generally serves a specific function and has a specific template. In Django, web pages and other content are delivered by views. Each view is represented by a Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).
+
+    In URLconf, it use `<int:question_id>` to capture the remaining string and convert it into int type and name it as question_id.
+
+    Each view is responsible for doing one of two things: returning an HttpResponse object containing the content for the requested page, or raising an exception such as Http404. The rest is up to you.
+
+    Django's template system can separate the design from Python by creating a template that the view can use. Use render and map the variables to template in context.
+
+    The render() function takes the request object as its first argument, a template name as its second argument and a dictionary as its optional third argument. It returns an HttpResponse object of the given template rendered with the given context
+
+    Use `get_object_or_404()`， The get_object_or_404() function takes a Django model as its first argument and an arbitrary number of keyword arguments, which it passes to the get() function of the model’s manager. It raises Http404 if the object doesn’t exist There’s also a get_list_or_404() function, which works just as get_object_or_404() – except using filter() instead of get(). It raises Http404 if the list is empty.
+
+    In `polls/urls.py`, change hard code url to `{% url 'polls:detail' question.id %}` can make it easy when change the urls. And remember to add `app_name='polls'` in `polls/urls.py`.
    
 
